@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "usuarios",
+  "info": {
+    "singularName": "usuario",
+    "pluralName": "usuarios",
+    "displayName": "Usuario",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    },
+    "sobrenome": {
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    },
+    "user": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 6
+    },
+    "password": {
+      "type": "password",
+      "required": true,
+      "minLength": 6,
+      "private": true
+    },
+    "carrinho": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::carrinho.carrinho"
+    },
+    "nascimento": {
+      "type": "date",
+      "required": true,
+      "unique": false
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    }
+  }
+}

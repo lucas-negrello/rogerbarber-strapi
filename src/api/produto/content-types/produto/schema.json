@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produtos",
+  "info": {
+    "singularName": "produto",
+    "pluralName": "produtos",
+    "displayName": "produto",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    },
+    "imagem": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "descricao": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 1
+    },
+    "preco": {
+      "type": "float",
+      "required": true,
+      "min": 0.01
+    },
+    "desconto": {
+      "type": "float"
+    },
+    "subcategoria": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subcategoria.subcategoria",
+      "inversedBy": "produtos"
+    },
+    "categoria": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::categoria.categoria",
+      "inversedBy": "produtos"
+    },
+    "quantidade": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

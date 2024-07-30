@@ -1,0 +1,16 @@
+version: "3.1"
+
+services:
+  postgres_strapi_roger_api:
+    container_name: postgres_strapi_roger_api
+    hostname: postgres_strapi_roger_api
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: barbershop
+      POSTGRES_DB: strapi-roger-api
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - C:/Users/lucas/OneDrive/Imagens/Documentos/strapi-roger-api-postgres:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432

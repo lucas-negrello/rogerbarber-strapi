@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carrinhos",
+  "info": {
+    "singularName": "carrinho",
+    "pluralName": "carrinhos",
+    "displayName": "carrinho"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "produtos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::produto.produto"
+    }
+  }
+}
